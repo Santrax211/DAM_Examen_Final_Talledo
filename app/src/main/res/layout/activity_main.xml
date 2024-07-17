@@ -18,7 +18,7 @@
         android:hint="Usuario, correo electrónico o móvil"
         android:inputType="textPersonName"
         android:textColorHint="@color/fondo_hint"
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
@@ -34,7 +34,7 @@
         android:hint="Contraseña"
         android:inputType="textPassword"
         android:textColorHint="@color/fondo_hint"
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/editTextLogin"
         app:layout_constraintStart_toStartOf="@+id/editTextLogin"
         app:layout_constraintTop_toBottomOf="@+id/editTextLogin" />
