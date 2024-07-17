@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.dam_examen_final_talledo.databinding.FragmentItemBinding;
@@ -44,19 +45,23 @@ public class MyNotaRecyclerViewAdapter extends RecyclerView.Adapter<MyNotaRecycl
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public final TextView mIdView;
-        public final TextView mContentView;
+        public final View mView;
+        public final TextView tvTitulo;
+        public final TextView tvContenido;
+        public final ImageView ivFavorita;
         public Nota mItem;
 
-        public ViewHolder(FragmentItemBinding binding) {
-            super(binding.getRoot());
-            mIdView = binding.itemNumber;
-            mContentView = binding.content;
+        public ViewHolder(View view) {
+            super(view);
+            mView=view;
+            tvTitulo = view.findViewById(R.id.textViewTitulo);
+            tvContenido = view.findViewById(R.id.textViewContenido);
+            ivFavorita = view.findViewById(R.id.imageViewFavorita);
         }
 
         @Override
         public String toString() {
-            return super.toString() + " '" + mContentView.getText() + "'";
+            return super.toString() + " '" + tvTitulo.getText() + "'";
         }
     }
 }

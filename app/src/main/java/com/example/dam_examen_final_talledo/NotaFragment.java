@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class NotaFragment extends Fragment {
@@ -20,7 +21,7 @@ public class NotaFragment extends Fragment {
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
     // TODO: Customize parameters
-    private int mColumnCount = 1;
+    private int mColumnCount = 2;
     private NotasInteractionListener mListener;
     private List<Nota> notaList;
     private MyNotaRecyclerViewAdapter adapterNotas;
@@ -65,6 +66,16 @@ public class NotaFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
+            notaList = new ArrayList<>();
+            notaList.add(new Nota("Trabajo Académico","Las notas del trabajo académico serán  revisadas e ingresadas el día 16 de Julio", true, android.R.color.holo_blue_light));
+            notaList.add(new Nota("Resultado de Examen Final","La Revisión del examen final se revisarán durante la sesión de clases y el resultado será publicado en los próximos días, especificamente: 22/07/24 - 26/07/24  Examen final ", true, android.R.color.holo_blue_light));
+            notaList.add(new Nota("Examen Sustitutorio","Examen Sustitutorio planificado para el día 24 de julio del 2024. Asistir puntualmente a todos los que se van a presentar.", true, android.R.color.holo_blue_light));
+            notaList.add(new Nota("Fiestas Patrias","Desfiles militares, ferias gastronómicas y recorridos turísticos se abren para celebrar en este año 2024. ¡Felíz día del Perú!", false, android.R.color.holo_blue_light));
+            notaList.add(new Nota("Despedida de Ciclo","Aprecio mucho su amistad, su participación en las sesiones de clases, cada ciclo es una nueva experiencia, deseo que sigan estudiando. Muchas Felicidades. Nos vemos el 2024 - II", true, android.R.color.holo_blue_light));
+            notaList.add(new Nota("Estudia y superate","Todas las distintas capacidades que el hombre posee de la mente, del alma y del cuerpo le fueron dadas por Dios para que las dedique a alcanzar el más alto grado de excelencia posible. Toda facultad y todo atributo con que el Creador nos haya dotado deben emplearse para su gloria y para el ennoblecimiento de nuestros semejantes. Y en este empleo se halla la ocupación más pura, más noble y más feliz.", false, android.R.color.holo_blue_light));
+            notaList.add(new Nota("Trabajo Académico","Las notas del trabajo académico serán  revisadas e ingresadas el día 16 de Julio", true, android.R.color.holo_blue_light));
+            notaList.add(new Nota("Examen Final","Estudiar para el Examen Final: Caso: Notas Listas, es una réplica de la UC4", true, android.R.color.holo_blue_light));
+
             adapterNotas = new MyNotaRecyclerViewAdapter(notaList, mListener);
             recyclerView.setAdapter(adapterNotas);
         }
