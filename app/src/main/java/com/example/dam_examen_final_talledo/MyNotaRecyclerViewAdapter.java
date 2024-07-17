@@ -36,6 +36,17 @@ public class MyNotaRecyclerViewAdapter extends RecyclerView.Adapter<MyNotaRecycl
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
+        holder.tvTitulo.setText(holder.mItem.getTitulo());
+        holder.tvContenido.setText(holder.mItem.getContenido());
+        if(holder.mItem.isFavoritas()) {
+            holder.ivFavorita.setImageResource(R.drawable.baseline_star_purple500_24);
+        }
+        holder.ivFavorita.setOnClickListener(v->{
+            if(null != mListener){
+                mListener.favoritaNotaClick(holder.mItem);
+            }
+        });
+
 
     }
 
